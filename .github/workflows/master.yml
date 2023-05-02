@@ -1,0 +1,52 @@
+name: master CI/CD
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  master:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: show linux version
+      run: lsb_release -a
+    - name: list directory
+      run: ls -la
+    - name: show python version
+      run: python --version
+    - name: make .env 
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        envkey_PROD_SECRET_KEY : ${{ secrets.PROD_SECRET_KEY }}
+        envkey_PROD_DATABASE : ${{ secrets.PROD_DATABASE }}
+        envkey_PROD_USER : ${{ secrets.PROD_USER }}
+        envkey_PROD_PASSWORD : ${{ secrets.PROD_PASSWORD }}
+        envkey_PROD_HOST : ${{ secrets.PROD_HOST }}
+        envkey_PROD_PORT : ${{ secrets.PROD_PORT }}     
+        file_name: .env
+        fail_on_empty: false
+    - name: show .env file
+      run : cat .env
+
+    - uses: okteto/context@2.7.0
+      with:
+       token: ${{ secrets.OKTETO_TOKEN }}
+    - name: Deploy
+      uses: okteto/pipeline@2.7.0
+      with:
+        name: zurisaddairj # cambiar por su namespace
+        timeout: 10m
