@@ -1,0 +1,28 @@
+{
+    "select_language": "Selecciona el idioma",
+    "hello_welcome_to_react": "Hola, Bienvenido a React",
+    "this_is_an_example": "Esto es un ejemplo",
+    "please_enter_name": "Por favor introduce tu nombre",
+    "Hacker": "Hacker",
+    "List": "Lista",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "text-davinci-003":"text-davinci-003",
+    "Create-Image": "Crear-Imagén",
+    "login": "Iniciar Sesión",
+    "Servicio OpenAi": "Servicio OpenAi",
+    "Servicio de chat": "Servicio Chat",
+    "Emoji Service": "Servicio Emoji",
+    "Translation Service": "Servicio de Traducción",
+    "Servicio de clasificación": "Servicio de Clasificación",
+    "Generador de imagenes": "Generador de Imagenes",
+    "Generador de nombres": "Generador de Nombres",
+    "Chat": "Chat",
+    "Emojí": "Emojí",
+    "Traductor": "Traductor",
+    "Clasificación": "Clasificación",
+    "¿Qué_Servicio_quieres_Ocupar?":  "¿Qué Servicio quieres Ocupar?"
+    
+
+}
+   

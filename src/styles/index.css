@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+input {
+  max-width: 500px;
+}
+
+.gray {
+  color: #bb9169;
+}
+
+.orange {
+  background-color: #357575;
+}
+
+.background-gray {
+  background-color: rgba(150, 108, 61, 0.959);
+}
+
+.f11 {
+  font-size: 11px;
+}
+
+.w85 {
+  width: 85%;
+}
+
+.button {
+  font-family: monospace;
+  font-size: 18pt;
+  color: black;
+  background-color: buttonface;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  cursor: pointer;
+  max-width: 250px;
+}
+
+.btn-success {
+  border: 1px solid #000000;
+  /*anchura, estilo y color borde*/
+  padding: 10px;
+  /*espacio alrededor texto*/
+  background-color: #1a8d54;
+  /*color botón*/
+  color: #ffffff;
+  /*color texto*/
+  text-decoration: none;
+  /*decoración texto*/
+  text-transform: uppercase;
+  /*capitalización texto*/
+  font-family: monospace;
+  /*tipografía texto*/
+  border-radius: 20px;
+  /*bordes redondos*/
+  font-size: 10px;
+  font-weight: bold;
+}
+
+body{
+  background-image: url('https://www.upb.edu.co/es/imagenes/imgtipod-blgleyendosinseparador-megustarialeer-1464204951973.jpg');
+}
