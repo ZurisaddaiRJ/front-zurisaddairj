@@ -63,6 +63,10 @@ jobs:
       - name: update model name in k8 
         run: sed -i 's/{model_name}/${{secrets.MODEL_NAME}}/g' manifests/k8s.yaml
 
+        
+      - name: update nodos name in k8 
+        run: sed -i 's/{nodo}/${{secrets.NODOS}}/g' manifests/k8s.yaml
+
       - name: update _ by - 
         run: sed -i 's/_/-/g' manifests/k8s.yaml
 
@@ -83,3 +87,4 @@ jobs:
           namespace: ${{secrets.OKTETO_NAMESPACE }}
           manifest: manifests/k8s.yaml
           tag: ${{ secrets.DOCKER_USERNAME }}/${{secrets.MODEL_NAME}}:${{github.sha}}
+
